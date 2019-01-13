@@ -1,10 +1,5 @@
 <template>
-  <div class="container">
-    <router-link
-      :to="{ name: 'cart' }">
-      カートへ
-    </router-link>
-  </div>
+  <div/>
 </template>
 
 <script>

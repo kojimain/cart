@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <CartScreen
-      :items="items"/>
+  <div class="section">
+    <div class="content">
+      <CartScreen
+        :items="items"/>
+    </div>
   </div>
 </template>
 
