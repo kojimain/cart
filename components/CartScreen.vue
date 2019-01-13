@@ -35,7 +35,8 @@ export default {
         engine: engine,
         options: {
           width: renderWidth,
-          height: renderHeight
+          height: renderHeight,
+          wireframes: false
         }
       })
       Matter.Render.run(render)
@@ -173,13 +174,24 @@ export default {
 
       // --- cargos // ----------
       const cargos = this.items
+      const cargoStiffness = 25
+      const cargoTextureScale = 25 / 100
       let cargoY = cartY
       cargos.forEach(function(cargo) {
         let cargoContent = Matter.Bodies.rectangle(
           cartX,
-          (cargoY -= cargo.height),
-          cargo.width,
-          cargo.height
+          (cargoY -= cargoStiffness),
+          cargoStiffness,
+          cargoStiffness,
+          {
+            render: {
+              sprite: {
+                texture: '/samplethumb.png', // 100x100
+                xScale: cargoTextureScale,
+                yScale: cargoTextureScale
+              }
+            }
+          }
         )
         contents.push(cargoContent)
       })
