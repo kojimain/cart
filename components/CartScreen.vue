@@ -194,3 +194,12 @@ export default {
   }
 }
 </script>
+
+<style>
+#cart-screen canvas {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 300px;
+}
+</style>
