@@ -191,7 +191,7 @@ export default {
           {
             render: {
               sprite: {
-                texture: '/samplethumb.png', // 100x100
+                texture: cargo.imageUrl, // 100x100
                 xScale: cargoTextureScale,
                 yScale: cargoTextureScale
               }
