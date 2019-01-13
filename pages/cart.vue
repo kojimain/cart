@@ -1,6 +1,7 @@
 <template>
   <div>
-    <CartScreen/>
+    <CartScreen
+      :items="items"/>
   </div>
 </template>
 
@@ -10,6 +11,11 @@ import CartScreen from '~/components/CartScreen'
 export default {
   components: {
     CartScreen
+  },
+  data() {
+    return {
+      items: this.$store.state.cart.items
+    }
   }
 }
 </script>

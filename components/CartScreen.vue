@@ -9,6 +9,12 @@ import Matter from 'matter-js'
 import decomp from 'poly-decomp'
 
 export default {
+  props: {
+    items: {
+      type: Array[Object],
+      default() {}
+    }
+  },
   mounted() {
     window.decomp = decomp
     this.drawScreen()
@@ -166,11 +172,7 @@ export default {
       // --- // cart ----------
 
       // --- cargos // ----------
-      const cargos = [
-        { name: 'cargo1', width: 20, height: 10 },
-        { name: 'cargo2', width: 40, height: 30 },
-        { name: 'cargo3', width: 30, height: 20 }
-      ]
+      const cargos = this.items
       let cargoY = cartY
       cargos.forEach(function(cargo) {
         let cargoContent = Matter.Bodies.rectangle(
