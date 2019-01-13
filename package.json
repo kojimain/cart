@@ -18,7 +18,8 @@
     "express": "^4.16.3",
     "matter-js": "^0.14.2",
     "nuxt": "^2.0.0",
-    "poly-decomp": "^0.3.0"
+    "poly-decomp": "^0.3.0",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
