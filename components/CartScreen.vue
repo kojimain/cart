@@ -177,9 +177,14 @@ export default {
       const cargoStiffness = 25
       const cargoTextureScale = 25 / 100
       let cargoY = cartY
+      const cargoXOffsetCandidates = [-25, 0, 25]
       cargos.forEach(function(cargo) {
+        let cargoXOffset =
+          cargoXOffsetCandidates[
+            Math.floor(Math.random() * cargoXOffsetCandidates.length)
+          ]
         let cargoContent = Matter.Bodies.rectangle(
-          cartX,
+          cartX + cargoXOffset,
           (cargoY -= cargoStiffness),
           cargoStiffness,
           cargoStiffness,
