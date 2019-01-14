@@ -95,16 +95,15 @@ export default {
         { isStatic: true }
       )
       contents.push(wallRight)
-      const hillHeight = renderHeight / 2 - 100
-      const hill = Matter.Bodies.rectangle(
-        renderWidth,
-        hillHeight,
-        wallWidth,
-        renderHeight,
-        {
-          isStatic: true,
-          angle: Math.PI * 0.44
-        }
+      const hillVertices = Matter.Vertices.fromPath(
+        'M640 243.97L640 613.2L526.48 613.2L310.36 613.2L91.5 613.2L91.5 243.97L320 122.1L640 43.32L640 243.97Z'
+      )
+      const hill = Matter.Bodies.fromVertices(
+        renderWidth - 110,
+        renderHeight - 180,
+        hillVertices,
+        { isStatic: true },
+        true
       )
       contents.push(hill)
 
@@ -112,7 +111,7 @@ export default {
       const cart = Matter.Composite.create({ label: 'cart' })
       contents.push(cart)
       const cartX = renderWidth - 100
-      const cartY = hillHeight - 60
+      const cartY = 100
 
       // bucket
       const bucketWidth = 120
@@ -182,7 +181,7 @@ export default {
       const itemStiffness = 25
       const itemTextureScale = 30 / 100
       let itemY = cartY
-      const itemXOffsetCandidates = [-25, 0, 25]
+      const itemXOffsetCandidates = [-20, 0, 20]
       items.forEach(function(item) {
         let itemXOffset =
           itemXOffsetCandidates[
