@@ -172,35 +172,35 @@ export default {
       Matter.Composite.addConstraint(cart, wheelBConstraint)
       // --- // cart ----------
 
-      // --- cargos // ----------
-      const cargos = this.items
-      const cargoStiffness = 25
-      const cargoTextureScale = 25 / 100
-      let cargoY = cartY
-      const cargoXOffsetCandidates = [-25, 0, 25]
-      cargos.forEach(function(cargo) {
-        let cargoXOffset =
-          cargoXOffsetCandidates[
-            Math.floor(Math.random() * cargoXOffsetCandidates.length)
+      // --- items // ----------
+      const items = this.items
+      const itemStiffness = 25
+      const itemTextureScale = 25 / 100
+      let itemY = cartY
+      const itemXOffsetCandidates = [-25, 0, 25]
+      items.forEach(function(item) {
+        let itemXOffset =
+          itemXOffsetCandidates[
+            Math.floor(Math.random() * itemXOffsetCandidates.length)
           ]
-        let cargoContent = Matter.Bodies.rectangle(
-          cartX + cargoXOffset,
-          (cargoY -= cargoStiffness),
-          cargoStiffness,
-          cargoStiffness,
+        let itemContent = Matter.Bodies.rectangle(
+          cartX - itemXOffset,
+          (itemY -= itemStiffness),
+          itemStiffness,
+          itemStiffness,
           {
             render: {
               sprite: {
-                texture: cargo.imageUrl, // 100x100
-                xScale: cargoTextureScale,
-                yScale: cargoTextureScale
+                texture: item.imageUrl, // 100x100
+                xScale: itemTextureScale,
+                yScale: itemTextureScale
               }
             }
           }
         )
-        contents.push(cargoContent)
+        contents.push(itemContent)
       })
-      // --- // cargos ----------
+      // --- // items ----------
 
       // add
       Matter.World.add(world, contents)
