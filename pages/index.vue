@@ -32,6 +32,24 @@ export default {
           name: 'item3',
           description: 'item3item3item3item3item3',
           imageUrl: '/items/sample/item3.png'
+        },
+        {
+          id: 4,
+          name: 'item4',
+          description: 'item4item4item4item4item4',
+          imageUrl: '/items/sample/item4.png'
+        },
+        {
+          id: 5,
+          name: 'item5',
+          description: 'item5item5item5item5item5',
+          imageUrl: '/items/sample/item5.png'
+        },
+        {
+          id: 6,
+          name: 'item6',
+          description: 'item6item6item6item6item6',
+          imageUrl: '/items/sample/item6.png'
         }
       ]
     }
