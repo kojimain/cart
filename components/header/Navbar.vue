@@ -1,5 +1,14 @@
 <template>
   <nav class="navbar is-info">
+    <div class="navbar-brand">
+      <router-link
+        :to="{ name: 'index' }"
+        class="navbar-item">
+        <span class="icon">
+          <i class="fa fa-home"/>
+        </span>
+      </router-link>
+    </div>
     <div class="navbar-menu is-active">
       <div class="navbar-end">
         <router-link
