@@ -1,15 +1,20 @@
 <template>
-  <div class="section">
-    <Items
-      :items="items"/>
+  <div>
+    <Hero/>
+    <div class="section">
+      <Items
+        :items="items"/>
+    </div>
   </div>
 </template>
 
 <script>
+import Hero from '~/components/index/Hero'
 import Items from '~/components/Items'
 
 export default {
   components: {
+    Hero,
     Items
   },
   data() {
