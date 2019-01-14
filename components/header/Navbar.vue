@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-info">
+  <nav class="navbar is-info is-fixed-top">
     <div class="navbar-brand">
       <router-link
         :to="{ name: 'index' }"
@@ -8,20 +8,16 @@
           <i class="fa fa-home"/>
         </span>
       </router-link>
-    </div>
-    <div class="navbar-menu is-active">
-      <div class="navbar-end">
-        <router-link
-          :to="{ name: 'cart' }"
-          class="navbar-item">
-          <span class="icon">
-            <i class="fas fa-shopping-cart"/>
-          </span>
-          <span>
-            ( {{ cartItemsCount }} )
-          </span>
-        </router-link>
-      </div>
+      <router-link
+        :to="{ name: 'cart' }"
+        class="navbar-item">
+        <span class="icon">
+          <i class="fas fa-shopping-cart"/>
+        </span>
+        <span>
+          ( {{ cartItemsCount }} )
+        </span>
+      </router-link>
     </div>
   </nav>
 </template>
@@ -35,3 +31,9 @@ export default {
   }
 }
 </script>
+
+<style>
+body {
+  padding-top: 52px;
+}
+</style>
