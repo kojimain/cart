@@ -1,14 +1,19 @@
 <template>
   <div>
     <div id="cart-screen"/>
+    <ClearItemsButton/>
   </div>
 </template>
 
 <script>
 import Matter from 'matter-js'
 import decomp from 'poly-decomp'
+import ClearItemsButton from '~/components/ClearItemsButton'
 
 export default {
+  components: {
+    ClearItemsButton
+  },
   props: {
     items: {
       type: Array[Object],
