@@ -8,8 +8,21 @@
           <span class="icon">
             <i class="fas fa-shopping-cart"/>
           </span>
+          <span>
+            ( {{ cartItemsCount }} )
+          </span>
         </router-link>
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    cartItemsCount() {
+      return this.$store.state.cart.items.length
+    }
+  }
+}
+</script>
