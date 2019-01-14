@@ -151,7 +151,7 @@ export default {
       const wheelAX = cartX - wheelOffsetX
       const wheelAY = cartY + wheelOffsetY
       const wheelA = Matter.Bodies.circle(wheelAX, wheelAY, wheelSize, {
-        friction: 0.8
+        friction: 0
       })
       Matter.Composite.addBody(cart, wheelA)
       const wheelAConstraint = Matter.Constraint.create({
@@ -165,7 +165,7 @@ export default {
       const wheelBX = cartX + wheelOffsetX
       const wheelBY = cartY + wheelOffsetY
       const wheelB = Matter.Bodies.circle(wheelBX, wheelBY, wheelSize, {
-        friction: 0.8
+        friction: 0
       })
       Matter.Composite.addBody(cart, wheelB)
       const wheelBConstraint = Matter.Constraint.create({
