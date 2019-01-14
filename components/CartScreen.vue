@@ -175,7 +175,7 @@ export default {
       // --- items // ----------
       const items = this.items
       const itemStiffness = 25
-      const itemTextureScale = 25 / 100
+      const itemTextureScale = 30 / 100
       let itemY = cartY
       const itemXOffsetCandidates = [-25, 0, 25]
       items.forEach(function(item) {
